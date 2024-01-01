@@ -4,7 +4,7 @@ const { StatusCodes } = require("http-status-codes");
 //jwt
 const jwt = require("jsonwebtoken");
 // db connection
-const dbConnection = require("../db/dbConfig");
+const dbConnection = require("../Model/dbConfig");
 
 async function register(req, res) {
     const { username, firstname, lastname, email, password } = req.body;

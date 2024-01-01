@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(cors());
 
 // db connection
-const dbConnection = require("./db/dbConfig");
+const dbConnection = require("./Model/dbConfig");
 // json middleware to extract JSON
 app.use(express.json());
 
