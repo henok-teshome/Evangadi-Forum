@@ -7,7 +7,7 @@ const cors = require("cors");
 app.use(cors());
 
 // db connection
-const dbConnection = require("./Model/dbConfig");
+const dbConnection = require("./db/dbConfig");
 // json middleware to extract JSON
 app.use(express.json());
 
@@ -24,7 +24,7 @@ const authMiddleware = require("./middleware/authMiddleware");
 // use userRoutes for '/api/users' path
 app.use("/api/users", userRoutes);
 // use questionRoutes for '/api/users' path
-app.use("/api/questions", authMiddleware, questionRoutes); // question
+app.use("/api/questions", questionRoutes); // question
 
 //Question route middleware file ???
 

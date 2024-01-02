@@ -1,8 +1,20 @@
 const express = require("express");
 const router = express.Router();
-//authentication middleware
+const authMiddleware = require("../middleware/authMiddleware");
 
-router.get("/all-questions", (req, res) => {
-    res.send("All questions");
-});
+const {
+    allquestions,
+    postquestions,
+    singlequestions,
+} = require("../controller/questionController.js");
+
+//post question route
+router.post("/post-questions", authMiddleware, postquestions);
+
+//all question route
+router.get("/all-questions", authMiddleware, allquestions);
+
+//single question route
+router.get("/question/:questionid", authMiddleware, singlequestions);
+
 module.exports = router;

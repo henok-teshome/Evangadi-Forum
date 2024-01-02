@@ -4,7 +4,7 @@ const { StatusCodes } = require("http-status-codes");
 //jwt
 const jwt = require("jsonwebtoken");
 // db connection
-const dbConnection = require("../Model/dbConfig");
+const dbConnection = require("../db/dbConfig");
 
 async function register(req, res) {
     const { username, firstname, lastname, email, password } = req.body;
@@ -95,13 +95,11 @@ async function login(req, res) {
         const token = jwt.sign({ username, userid }, process.env.JWT_SECRET, {
             expiresIn: "25d",
         });
-        return res
-            .status(StatusCodes.OK)
-            .json({
-                msg: "user login successful.",
-                token: token,
-                username: username,
-            });
+        return res.status(StatusCodes.OK).json({
+            msg: "user login successful.",
+            token: token,
+            username: username,
+        });
     } catch (error) {
         //console.error("Error during user registration:", error.message);
         return res
