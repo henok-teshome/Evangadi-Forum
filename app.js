@@ -1,45 +1,52 @@
 require("dotenv").config();
-require("dotenv").config();
 const express = require("express");
 const app = express();
 const PORT = 7000;
 const cors = require("cors");
-app.use(cors());
-
-// db connection
 const dbConnection = require("./db/dbConfig");
-// json middleware to extract JSON
-app.use(express.json());
 
-// Set global Content-Type header
+// Middleware to set global Content-Type header
 app.use((req, res, next) => {
     res.set("Content-Type", "application/json");
     next();
 });
-// user route middleware file
+
+// Middleware for JSON extraction
+app.use(express.json());
+
+// Middleware for enabling CORS
+app.use(cors());
+
+// Routes
 const userRoutes = require("./routes/userRoute");
-//questions route middleware file
 const questionRoutes = require("./routes/questionRoute");
+const answerRoutes = require("./routes/answerRoute");
 const authMiddleware = require("./middleware/authMiddleware");
-// use userRoutes for '/api/users' path
+
+// Use userRoutes for '/api/users' path
 app.use("/api/users", userRoutes);
-// use questionRoutes for '/api/users' path
-app.use("/api/questions", questionRoutes); // question
 
-//Question route middleware file ???
+// Use questionRoutes for '/api/questions' path
+app.use("/api/questions", questionRoutes);
 
-// Answer route middleware ??
+// Use answerRoutes for '/api/answers' path
+app.use("/api/answers", answerRoutes);
+
+// Start server
 async function start() {
     try {
-        const result = await dbConnection.execute("SELECT  'Abebe' ");
-        //console.log(result);
-        await app.listen(PORT);
+        // Check the database connection
+        await dbConnection.execute("SELECT  'Abebe' ");
+        console.log("Database connection established");
 
-        console.log("connection is established");
+        // Start the server
+        await app.listen(PORT);
         console.log("Server is running...");
-        console.log(`listening on ${PORT}`);
+        console.log(`Listening on ${PORT}`);
     } catch (error) {
-        console.log(error.message);
+        console.error("Error during startup:", error.message);
     }
 }
+
+// Start the application
 start();
