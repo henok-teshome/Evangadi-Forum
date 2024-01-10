@@ -1,0 +1,39 @@
+.btn {
+    background-color: #516cf0 !important;
+    width: 200px;
+    font-weight: bold;
+    margin-left: 30px;
+    border: 0px !important;
+    box-shadow: none !important;
+}
+.header {
+    padding: 0 20% !important;
+}
+.header-btn:hover {
+    color: #fe8402;
+    border-radius: 5px;
+    transition: 0.9s;
+}
+.btn-blue {
+    font-size: larger;
+    font-weight: 600;
+}
+.heade {
+    height: 100px;
+    padding: 20px;
+    background-color: black;
+}
+.header_up {
+    margin-bottom: 40px;
+}
+.links {
+    text-decoration: none;
+    color: gray;
+}
+.links:hover {
+    color: #fe8402;
+}
+.link {
+    text-decoration: none;
+    color: #fff;
+}

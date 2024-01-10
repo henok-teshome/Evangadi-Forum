@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.login {
+    padding: 2%;
+    margin-right: 3%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 2%;
+    background-color: #fdfdfd !important;
+    border-radius: 10px;
+    box-shadow: 1px 0px 8px 0px rgba(230, 214, 214, 0.95);
+}
+.about {
+    padding-top: 20%;
+}
+.auth-title {
+    margin-top: 10%;
+}
+.lnk-toggler {
+    color: #da7000;
+    text-decoration: none;
+}
+.lnk-toggler:hover {
+    text-decoration: underline;
+}
+.login-input:focus {
+    border: 0px !important;
+    box-shadow: none !important;
+    border-bottom: 3.5px solid #fe8402 !important;
+}
+.login-btn {
+    border: none !important;
+    width: 100%;
+    margin: 0;
+}
+.login-btn:hover {
+    background: #fe8402 !important;
+}
+.abt-txt {
+    color: #fe8402;
+}
+.abt-btn {
+    background: #fe8402 !important;
+    border: none !important;
+}
+
+.sign-up {
+    padding: 5% 15% 0%;
+    margin-left: 0;
+    background: url("../../assets/img/bg.jpg");
+    background-size: cover;
+    height: auto;
+    margin: 5% 0;
+}
+
+.ab {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 0 15% 0 !important;
+    position: sticky !important;
+    transition: 0.3s !important;
+    z-index: 100 !important;
+    top: 0 !important;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+.nav-txt {
+    color: #4b456f;
+}
+.nav-txt:hover {
+    color: #fe8402;
+}
+
+.nav-btn {
+    width: 190px !important;
+}
+.fixed-top {
+    position: absolute !important;
+}
+
+/* .navbar-brand {
+    padding: 0 0% 0 10% !important;
+}
+
+.login-btn{
+    padding: 0 18%  0 0 ;
+} */
+
+.header {
+    margin-bottom: 2%;
+}
+.login-input-password {
+    display: flex;
+}
+.icon-pass {
+    font-size: 1rem;
+    margin-left: -10%;
+    margin-right: 0;
+}
+
+@media screen and (max-width: 760) {
+    .tinshua {
+        display: block !important;
+    }
+}
