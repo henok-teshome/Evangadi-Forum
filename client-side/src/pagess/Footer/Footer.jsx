@@ -66,7 +66,7 @@ function Footer() {
                   </ul>
                 </div>
                 <div className="col-lg-4 col-md-4">
-                  <h4>Contact Info</h4>
+                  <h5>Contact Info</h5>
                   <ul className="list-menu contact-list">
                     <li className="b">Evangadi Networks || Henok Setegne</li>
                     <li className="b">henoksetegne@gmail.com</li>
