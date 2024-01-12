@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 
 // Middleware for JSON extraction
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 // Middleware for enabling CORS
 app.use(cors());
 

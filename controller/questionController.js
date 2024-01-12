@@ -64,11 +64,11 @@ async function allquestions(req, res) {
 
 // Retrieve a single question
 async function singlequestions(req, res) {
-    const questionId = req.params.questionid;
+    const questionid = req.params.questionid;
 
     try {
         const query = "SELECT * FROM questions WHERE questionid = ?";
-        const [question] = await dbConnection.query(query, [questionId]);
+        const [question] = await dbConnection.query(query, [questionid]);
 
         if (!question.length) {
             return res

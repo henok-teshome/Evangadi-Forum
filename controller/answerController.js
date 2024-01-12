@@ -46,13 +46,13 @@ async function allanswer(req, res) {
         const questionId = req.params.questionId;
 
         // Fetch all answers for the specified question
-        const [answers] = await dbConnection.query(
-            "SELECT * FROM answers WHERE questionid = ?",
+        const [answer] = await dbConnection.query(
+            "SELECT answer, username FROM answers JOIN users ON answers.userid = users.userid WHERE questionid = ? ",
             [questionId]
         );
 
         // Respond with the fetched answers
-        return res.status(StatusCodes.OK).json(answers);
+        return res.status(StatusCodes.OK).json({ answer });
     } catch (error) {
         console.error("Error fetching answers:", error.message);
         return res
