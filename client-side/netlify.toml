@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to="/index.jxs"
+status = 200
